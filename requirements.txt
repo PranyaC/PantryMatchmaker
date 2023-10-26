@@ -1,0 +1,9 @@
+pandas
+scikit-learn
+numpy
+unidecode
+requests
+bs4
+nltk
+streamlit
+gpt4all
