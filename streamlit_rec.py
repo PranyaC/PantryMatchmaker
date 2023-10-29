@@ -1,6 +1,6 @@
 import streamlit as st
 from rec import rec_sys
-from create_recipe import generate_recipes
+# from create_recipe import generate_recipes
 
 st.markdown(
          f"""
@@ -45,7 +45,7 @@ col5, col6, col7 = st.columns([1.25, 1, 0.05])
 
 search = col5.button('Search for Recipes!')
 
-generate = col6.button('Experiment with a newly created recipe!')
+# generate = col6.button('Experiment with a newly created recipe!')
 
 if search:
     recs = rec_sys(ingredients,difficulty,diet,num)
@@ -57,63 +57,63 @@ if search:
     recs_html = recs_html.replace('<th>', '<th style="text-align: center;">')
     st.markdown(recs_html, unsafe_allow_html=True)
 
-if generate:
-    recipe = generate_recipes(ingredients, difficulty, diet)
-    st.markdown(recipe)
+# if generate:
+#     recipe = generate_recipes(ingredients, difficulty, diet)
+#     st.markdown(recipe)
 
-tooltip_text = """
-<div class="tooltip">
-  <div class="info-icon">i</div>
-  <span class="tooltiptext">NOTE: This recipe is AI generated and may not be completely accurate, please exercise precautions.</span>
-</div>
-"""
+# tooltip_text = """
+# <div class="tooltip">
+#   <div class="info-icon">i</div>
+#   <span class="tooltiptext">NOTE: This recipe is AI generated and may not be completely accurate, please exercise precautions.</span>
+# </div>
+# """
 
-col7.markdown(
-    tooltip_text,
-    unsafe_allow_html=True
-)
+# col7.markdown(
+#     tooltip_text,
+#     unsafe_allow_html=True
+# )
 
-st.write("""
-    <style>
-        .tooltip {
-            position: relative;
-            display: inline-block;
-            cursor: pointer;
-        }
+# st.write("""
+#     <style>
+#         .tooltip {
+#             position: relative;
+#             display: inline-block;
+#             cursor: pointer;
+#         }
 
-        .info-icon {
-            background-color: #000;
-            color: #fff;
-            border-radius: 50%;  /* Makes the background circular */
-            width: 20px;  /* Width of the circle */
-            height: 20px;  /* Height of the circle */
-            text-align: center;
-            line-height: 20px;  /* Vertically center the "i" inside the circle */
-            font-weight: bold;  /* Make the "i" bold */
-        }
+#         .info-icon {
+#             background-color: #000;
+#             color: #fff;
+#             border-radius: 50%;  /* Makes the background circular */
+#             width: 20px;  /* Width of the circle */
+#             height: 20px;  /* Height of the circle */
+#             text-align: center;
+#             line-height: 20px;  /* Vertically center the "i" inside the circle */
+#             font-weight: bold;  /* Make the "i" bold */
+#         }
 
-        .tooltip .tooltiptext {
-            visibility: hidden;
-            width: 240px;
-            background-color: #555;
-            color: #fff;
-            text-align: center;
-            padding: 5px 0;
-            border-radius: 6px;
+#         .tooltip .tooltiptext {
+#             visibility: hidden;
+#             width: 240px;
+#             background-color: #555;
+#             color: #fff;
+#             text-align: center;
+#             padding: 5px 0;
+#             border-radius: 6px;
 
-            position: absolute;
-            z-index: 1;
-            bottom: 100%; 
-            left: 50%;
-            margin-left: -120px;
+#             position: absolute;
+#             z-index: 1;
+#             bottom: 100%; 
+#             left: 50%;
+#             margin-left: -120px;
             
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
+#             opacity: 0;
+#             transition: opacity 0.3s;
+#         }
 
-        .tooltip:hover .tooltiptext {
-            visibility: visible;
-            opacity: 1;
-        }
-    </style>
-""", unsafe_allow_html=True)
+#         .tooltip:hover .tooltiptext {
+#             visibility: visible;
+#             opacity: 1;
+#         }
+#     </style>
+# """, unsafe_allow_html=True)
